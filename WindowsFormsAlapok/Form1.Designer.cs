@@ -37,19 +37,22 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton_LegfeljebbSzazEzer = new System.Windows.Forms.RadioButton();
             this.radioButton_szazezerFelett = new System.Windows.Forms.RadioButton();
-            this.button_Kiiras = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_EredmenyFajlNeve = new System.Windows.Forms.TextBox();
             this.button_Megszamolas = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox_EredmenyFajlNeve = new System.Windows.Forms.TextBox();
+            this.button_Kiiras = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button_Maximum_Minimum_Valasztas = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox_KeresettOrszag = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox_talalatok_jelolese = new System.Windows.Forms.CheckBox();
+            this.textBox_KeresettOrszag = new System.Windows.Forms.TextBox();
             this.button_Kereses = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -66,14 +69,14 @@
             // 
             this.textBox_Forrasfajl.Location = new System.Drawing.Point(8, 44);
             this.textBox_Forrasfajl.Name = "textBox_Forrasfajl";
-            this.textBox_Forrasfajl.Size = new System.Drawing.Size(240, 29);
+            this.textBox_Forrasfajl.Size = new System.Drawing.Size(298, 29);
             this.textBox_Forrasfajl.TabIndex = 1;
             // 
             // button_Betoltes
             // 
             this.button_Betoltes.Location = new System.Drawing.Point(8, 86);
             this.button_Betoltes.Name = "button_Betoltes";
-            this.button_Betoltes.Size = new System.Drawing.Size(240, 34);
+            this.button_Betoltes.Size = new System.Drawing.Size(298, 34);
             this.button_Betoltes.TabIndex = 2;
             this.button_Betoltes.Text = "Betöltés";
             this.button_Betoltes.UseVisualStyleBackColor = true;
@@ -85,25 +88,26 @@
             this.listBox_Orszagoklista.ItemHeight = 24;
             this.listBox_Orszagoklista.Location = new System.Drawing.Point(8, 133);
             this.listBox_Orszagoklista.Name = "listBox_Orszagoklista";
-            this.listBox_Orszagoklista.Size = new System.Drawing.Size(240, 412);
+            this.listBox_Orszagoklista.Size = new System.Drawing.Size(298, 412);
             this.listBox_Orszagoklista.TabIndex = 3;
             // 
             // button_TeruletekAtlaga
             // 
             this.button_TeruletekAtlaga.Location = new System.Drawing.Point(12, 558);
             this.button_TeruletekAtlaga.Name = "button_TeruletekAtlaga";
-            this.button_TeruletekAtlaga.Size = new System.Drawing.Size(240, 34);
+            this.button_TeruletekAtlaga.Size = new System.Drawing.Size(294, 40);
             this.button_TeruletekAtlaga.TabIndex = 2;
             this.button_TeruletekAtlaga.Text = "Területek átlaga";
             this.button_TeruletekAtlaga.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox1.Controls.Add(this.radioButton_LegfeljebbSzazEzer);
             this.groupBox1.Controls.Add(this.radioButton_szazezerFelett);
-            this.groupBox1.Location = new System.Drawing.Point(298, 16);
+            this.groupBox1.Location = new System.Drawing.Point(359, 16);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(333, 114);
+            this.groupBox1.Size = new System.Drawing.Size(335, 114);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mit számoljunk?";
@@ -130,48 +134,60 @@
             this.radioButton_szazezerFelett.Text = "100.000-nél nagyobb területű";
             this.radioButton_szazezerFelett.UseVisualStyleBackColor = true;
             // 
-            // button_Kiiras
-            // 
-            this.button_Kiiras.Location = new System.Drawing.Point(298, 265);
-            this.button_Kiiras.Name = "button_Kiiras";
-            this.button_Kiiras.Size = new System.Drawing.Size(335, 42);
-            this.button_Kiiras.TabIndex = 5;
-            this.button_Kiiras.Text = "Kiírás";
-            this.button_Kiiras.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 24);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Eredményfájl neve:";
-            // 
-            // textBox_EredmenyFajlNeve
-            // 
-            this.textBox_EredmenyFajlNeve.Location = new System.Drawing.Point(298, 226);
-            this.textBox_EredmenyFajlNeve.Name = "textBox_EredmenyFajlNeve";
-            this.textBox_EredmenyFajlNeve.Size = new System.Drawing.Size(328, 29);
-            this.textBox_EredmenyFajlNeve.TabIndex = 7;
-            // 
             // button_Megszamolas
             // 
-            this.button_Megszamolas.Location = new System.Drawing.Point(298, 140);
+            this.button_Megszamolas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button_Megszamolas.Location = new System.Drawing.Point(359, 140);
             this.button_Megszamolas.Name = "button_Megszamolas";
             this.button_Megszamolas.Size = new System.Drawing.Size(335, 42);
             this.button_Megszamolas.TabIndex = 5;
             this.button_Megszamolas.Text = "Megszámolás";
-            this.button_Megszamolas.UseVisualStyleBackColor = true;
+            this.button_Megszamolas.UseVisualStyleBackColor = false;
             // 
-            // label3
+            // openFileDialog1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(298, 317);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(230, 24);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Maximum vagy minimum?";
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.groupBox2.Controls.Add(this.textBox_EredmenyFajlNeve);
+            this.groupBox2.Controls.Add(this.button_Kiiras);
+            this.groupBox2.Location = new System.Drawing.Point(337, 188);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(375, 126);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Eredményfájl neve";
+            // 
+            // textBox_EredmenyFajlNeve
+            // 
+            this.textBox_EredmenyFajlNeve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_EredmenyFajlNeve.Location = new System.Drawing.Point(20, 27);
+            this.textBox_EredmenyFajlNeve.Name = "textBox_EredmenyFajlNeve";
+            this.textBox_EredmenyFajlNeve.Size = new System.Drawing.Size(335, 29);
+            this.textBox_EredmenyFajlNeve.TabIndex = 12;
+            // 
+            // button_Kiiras
+            // 
+            this.button_Kiiras.Location = new System.Drawing.Point(20, 66);
+            this.button_Kiiras.Name = "button_Kiiras";
+            this.button_Kiiras.Size = new System.Drawing.Size(335, 42);
+            this.button_Kiiras.TabIndex = 11;
+            this.button_Kiiras.Text = "Kiírás";
+            this.button_Kiiras.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.button_Maximum_Minimum_Valasztas);
+            this.groupBox3.Location = new System.Drawing.Point(337, 320);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(375, 132);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Maximum vagy minimum?";
             // 
             // comboBox1
             // 
@@ -179,76 +195,71 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Minimum",
             "Maximum"});
-            this.comboBox1.Location = new System.Drawing.Point(298, 351);
+            this.comboBox1.Location = new System.Drawing.Point(20, 36);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(328, 32);
-            this.comboBox1.TabIndex = 9;
+            this.comboBox1.Size = new System.Drawing.Size(335, 32);
+            this.comboBox1.TabIndex = 12;
             // 
             // button_Maximum_Minimum_Valasztas
             // 
-            this.button_Maximum_Minimum_Valasztas.Location = new System.Drawing.Point(298, 393);
+            this.button_Maximum_Minimum_Valasztas.Location = new System.Drawing.Point(20, 78);
             this.button_Maximum_Minimum_Valasztas.Name = "button_Maximum_Minimum_Valasztas";
             this.button_Maximum_Minimum_Valasztas.Size = new System.Drawing.Size(335, 42);
-            this.button_Maximum_Minimum_Valasztas.TabIndex = 5;
+            this.button_Maximum_Minimum_Valasztas.TabIndex = 10;
             this.button_Maximum_Minimum_Valasztas.Text = "Minimum/Maximum választás";
             this.button_Maximum_Minimum_Valasztas.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // groupBox4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(298, 445);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 24);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Ország keresése:";
-            // 
-            // textBox_KeresettOrszag
-            // 
-            this.textBox_KeresettOrszag.Location = new System.Drawing.Point(298, 479);
-            this.textBox_KeresettOrszag.Name = "textBox_KeresettOrszag";
-            this.textBox_KeresettOrszag.Size = new System.Drawing.Size(263, 29);
-            this.textBox_KeresettOrszag.TabIndex = 11;
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.groupBox4.Controls.Add(this.checkBox_talalatok_jelolese);
+            this.groupBox4.Controls.Add(this.textBox_KeresettOrszag);
+            this.groupBox4.Controls.Add(this.button_Kereses);
+            this.groupBox4.Location = new System.Drawing.Point(337, 464);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(375, 167);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Ország keresése";
             // 
             // checkBox_talalatok_jelolese
             // 
             this.checkBox_talalatok_jelolese.AutoSize = true;
-            this.checkBox_talalatok_jelolese.Location = new System.Drawing.Point(298, 518);
+            this.checkBox_talalatok_jelolese.Location = new System.Drawing.Point(20, 80);
             this.checkBox_talalatok_jelolese.Name = "checkBox_talalatok_jelolese";
             this.checkBox_talalatok_jelolese.Size = new System.Drawing.Size(173, 28);
-            this.checkBox_talalatok_jelolese.TabIndex = 12;
+            this.checkBox_talalatok_jelolese.TabIndex = 16;
             this.checkBox_talalatok_jelolese.Text = "Találatok jelölése";
             this.checkBox_talalatok_jelolese.UseVisualStyleBackColor = true;
             // 
+            // textBox_KeresettOrszag
+            // 
+            this.textBox_KeresettOrszag.Location = new System.Drawing.Point(20, 41);
+            this.textBox_KeresettOrszag.Name = "textBox_KeresettOrszag";
+            this.textBox_KeresettOrszag.Size = new System.Drawing.Size(335, 29);
+            this.textBox_KeresettOrszag.TabIndex = 15;
+            // 
             // button_Kereses
             // 
-            this.button_Kereses.Location = new System.Drawing.Point(298, 556);
+            this.button_Kereses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button_Kereses.Location = new System.Drawing.Point(20, 118);
             this.button_Kereses.Name = "button_Kereses";
             this.button_Kereses.Size = new System.Drawing.Size(335, 42);
-            this.button_Kereses.TabIndex = 5;
+            this.button_Kereses.TabIndex = 13;
             this.button_Kereses.Text = "Keresés";
-            this.button_Kereses.UseVisualStyleBackColor = true;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.button_Kereses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_Kereses.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(724, 831);
-            this.Controls.Add(this.checkBox_talalatok_jelolese);
-            this.Controls.Add(this.textBox_KeresettOrszag);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox_EredmenyFajlNeve);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(724, 643);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button_Megszamolas);
-            this.Controls.Add(this.button_Kereses);
-            this.Controls.Add(this.button_Maximum_Minimum_Valasztas);
-            this.Controls.Add(this.button_Kiiras);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBox_Orszagoklista);
             this.Controls.Add(this.button_TeruletekAtlaga);
@@ -263,6 +274,11 @@
             this.Text = "Példa Windows Form alkalmazás";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,18 +294,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton_LegfeljebbSzazEzer;
         private System.Windows.Forms.RadioButton radioButton_szazezerFelett;
-        private System.Windows.Forms.Button button_Kiiras;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_EredmenyFajlNeve;
         private System.Windows.Forms.Button button_Megszamolas;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox textBox_EredmenyFajlNeve;
+        private System.Windows.Forms.Button button_Kiiras;
+        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button_Maximum_Minimum_Valasztas;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox_KeresettOrszag;
+        private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox checkBox_talalatok_jelolese;
+        private System.Windows.Forms.TextBox textBox_KeresettOrszag;
         private System.Windows.Forms.Button button_Kereses;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
