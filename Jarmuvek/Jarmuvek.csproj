@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{98CE55FB-36A5-46FE-8EAA-7C54D8E04485}</ProjectGuid>
+    <ProjectGuid>{2705E737-81A0-4DF5-9F31-9A2E21289082}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Sikidomok</RootNamespace>
-    <AssemblyName>Sikidomok</AssemblyName>
+    <RootNamespace>Jarmuvek</RootNamespace>
+    <AssemblyName>Jarmuvek</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,18 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAtmeretez.cs" />
-    <Compile Include="IRajzolas.cs" />
-    <Compile Include="Kor.cs" />
-    <Compile Include="Negyzet.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="IVehicle.cs" />
+    <Compile Include="Motorcycle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sikidom.cs" />
-    <Compile Include="Teglalap.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

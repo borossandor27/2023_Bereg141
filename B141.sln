@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sikidomok", "Sikidomok\Siki
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncAsync", "SyncAsync\SyncAsync.csproj", "{2D85FE4B-2BF6-4539-A3DD-8C15C7BF20B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jarmuvek", "Jarmuvek\Jarmuvek.csproj", "{2705E737-81A0-4DF5-9F31-9A2E21289082}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAlapok", "WindowsFormsAlapok\WindowsFormsAlapok.csproj", "{3411510B-B20C-41BF-816B-158DC58E3CF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{2D85FE4B-2BF6-4539-A3DD-8C15C7BF20B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D85FE4B-2BF6-4539-A3DD-8C15C7BF20B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D85FE4B-2BF6-4539-A3DD-8C15C7BF20B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2705E737-81A0-4DF5-9F31-9A2E21289082}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2705E737-81A0-4DF5-9F31-9A2E21289082}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2705E737-81A0-4DF5-9F31-9A2E21289082}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2705E737-81A0-4DF5-9F31-9A2E21289082}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3411510B-B20C-41BF-816B-158DC58E3CF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3411510B-B20C-41BF-816B-158DC58E3CF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3411510B-B20C-41BF-816B-158DC58E3CF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3411510B-B20C-41BF-816B-158DC58E3CF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

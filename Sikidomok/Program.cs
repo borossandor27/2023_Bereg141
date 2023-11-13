@@ -22,7 +22,7 @@ namespace Sikidomok
                 {
                     Kor kor = (Kor)item; //-- Csak így juthatunk az egyedi adathoz, a sugárhoz
                     Console.WriteLine($"A kör kerülete: {kor.Kerulet()} - területe: {kor.Terulet()} - sugara: {kor.Sugar}");
-
+                    kor.kisebb();
                 }
                 else if (item.GetType().Equals(typeof(Negyzet)))
                 {
