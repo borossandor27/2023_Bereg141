@@ -154,6 +154,7 @@
             this.button_Kiiras.TabIndex = 11;
             this.button_Kiiras.Text = "Kiírás";
             this.button_Kiiras.UseVisualStyleBackColor = false;
+            this.button_Kiiras.Click += new System.EventHandler(this.button_Kiiras_Click);
             // 
             // groupBox3
             // 
@@ -187,6 +188,7 @@
             this.button_Maximum_Minimum_Valasztas.TabIndex = 10;
             this.button_Maximum_Minimum_Valasztas.Text = "Minimum/Maximum választás";
             this.button_Maximum_Minimum_Valasztas.UseVisualStyleBackColor = false;
+            this.button_Maximum_Minimum_Valasztas.Click += new System.EventHandler(this.button_Maximum_Minimum_Valasztas_Click);
             // 
             // groupBox4
             // 

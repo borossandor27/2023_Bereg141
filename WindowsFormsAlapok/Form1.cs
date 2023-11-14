@@ -109,5 +109,55 @@ namespace WindowsFormsAlapok
             }
             MessageBox.Show($"Maximum 100.000 = {db} ", "adatok", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void button_Kiiras_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "valami szöveg a felhasználónak|*.txt";
+            saveFileDialog.InitialDirectory = Environment.CurrentDirectory;
+            saveFileDialog.FileName = "eredmeny.txt";
+            if (saveFileDialog.ShowDialog()==DialogResult.OK)
+            {
+                string eredmenyFajl = saveFileDialog.FileName;
+                textBox_EredmenyFajlNeve.Text =Path.GetFileName( eredmenyFajl);
+                try
+                {
+                    using (StreamWriter sw=new StreamWriter(eredmenyFajl))
+                    {
+                        sw.WriteLine("Ez az eredmény");
+                    }
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show("valami nem ok!" + Environment.NewLine + ex.Message);
+                    
+                }
+            }
+        }
+
+        private void button_Maximum_Minimum_Valasztas_Click(object sender, EventArgs e)
+        {
+            /*
+             * Listboxban vagy a legynagyobb 
+             * vagy a legkisebb területű országot 
+             * választja ki
+             */
+            if (comboBox_Maximum_Minimum.SelectedIndex==0)
+            {
+                Orszag keresettOrszag = null;
+                double keresettErtek = ((Orszag)listBox_Orszagoklista.Items[0]).Terulet;
+                foreach (Orszag item in listBox_Orszagoklista.Items)
+                {
+                    if (keresettErtek > item.Terulet)
+                    {
+                        keresettErtek = item.Terulet;
+                        keresettOrszag = item;
+                    }
+
+
+                }
+                MessageBox.Show($"Minimum {keresettOrszag.OrszagNev} területe: {keresettOrszag.Terulet}");
+            }
+        }
     }
 }
