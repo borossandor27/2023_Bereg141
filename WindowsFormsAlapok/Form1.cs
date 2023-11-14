@@ -89,16 +89,18 @@ namespace WindowsFormsAlapok
 
         private void button_Megszamolas_Click(object sender, EventArgs e)
         {
+            int db = 0;
             if (radioButton_LegfeljebbSzazEzer.Checked)
             {
-                szamolLegfeljebbSzazezer();
+                MessageBox.Show($"Maximum 100.000 = {szamolLegfeljebbSzazezer()} ", "adatok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ;
             } else
             {
-                szamolSzzezerFelett();
+                MessageBox.Show($"100.000 feletti {szamolSzzezerFelett()} ", "adatok", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void szamolSzzezerFelett()
+        private int szamolSzzezerFelett()
         {
             int db = 0;
             foreach (Orszag item in listBox_Orszagoklista.Items)
@@ -108,10 +110,10 @@ namespace WindowsFormsAlapok
                     db++;
                 }
             }
-            MessageBox.Show($"100.000 feletti {db} ", "adatok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return db;
         }
 
-        private void szamolLegfeljebbSzazezer()
+        private int szamolLegfeljebbSzazezer()
         {
             int db = 0;
             foreach (Orszag item in listBox_Orszagoklista.Items)
@@ -121,7 +123,7 @@ namespace WindowsFormsAlapok
                     db++;
                 }
             }
-            MessageBox.Show($"Maximum 100.000 = {db} ", "adatok", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return db;
         }
 
         private void button_Kiiras_Click(object sender, EventArgs e)
