@@ -20,17 +20,6 @@ namespace WindowsFormsAlapok
 
         private void button_Betoltes_Click(object sender, EventArgs e)
         {
-            Adatbetoltes();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            comboBox_Maximum_Minimum.SelectedIndex=0;
-            Adatbetoltes();
-        }
-
-        private void Adatbetoltes()
-        {
             openFileDialog1.Filter = "vesszővel tagolt csv|*.csv|txt files (*.txt)|*.txt|All files (*.*)|*.*";
             openFileDialog1.FilterIndex = 0;
             openFileDialog1.Title = "Adatfájl neve";
@@ -38,7 +27,27 @@ namespace WindowsFormsAlapok
             openFileDialog1.FileName = "orszagok.csv";
             if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
-                using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
+                Adatbetoltes(openFileDialog1.FileName);
+            }
+            else
+            {
+                return;
+            }
+            
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            comboBox_Maximum_Minimum.SelectedIndex=0;
+            Adatbetoltes(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "orszagok.csv");
+        }
+
+        private void Adatbetoltes(string file)
+        {
+            listBox_Orszagoklista.Items.Clear();
+            try
+            {
+                using (StreamReader sr = new StreamReader(file))
                 {
                     sr.ReadLine();
                     while (!sr.EndOfStream)
@@ -46,13 +55,18 @@ namespace WindowsFormsAlapok
                         listBox_Orszagoklista.Items.Add(new Orszag(sr.ReadLine()));
                     }
                 }
+
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
 
         private void button_TeruletekAtlaga_Click(object sender, EventArgs e)
         {
-            atlagszamitas2();
+            atlagszamitas();
         }
 
         private void atlagszamitas2()
@@ -138,7 +152,7 @@ namespace WindowsFormsAlapok
         private void button_Maximum_Minimum_Valasztas_Click(object sender, EventArgs e)
         {
             /*
-             * Listboxban vagy a legynagyobb 
+             * Listboxban vagy a legnagyobb 
              * vagy a legkisebb területű országot 
              * választja ki
              */
