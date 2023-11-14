@@ -73,6 +73,7 @@
             this.button_TeruletekAtlaga.TabIndex = 2;
             this.button_TeruletekAtlaga.Text = "Területek átlaga";
             this.button_TeruletekAtlaga.UseVisualStyleBackColor = true;
+            this.button_TeruletekAtlaga.Click += new System.EventHandler(this.button_TeruletekAtlaga_Click);
             // 
             // groupBox1
             // 
@@ -96,6 +97,7 @@
             this.button_Megszamolas.TabIndex = 6;
             this.button_Megszamolas.Text = "Megszámolás";
             this.button_Megszamolas.UseVisualStyleBackColor = false;
+            this.button_Megszamolas.Click += new System.EventHandler(this.button_Megszamolas_Click);
             // 
             // radioButton_LegfeljebbSzazEzer
             // 
@@ -248,6 +250,7 @@
             this.button_Betoltes.TabIndex = 5;
             this.button_Betoltes.Text = "Betöltés";
             this.button_Betoltes.UseVisualStyleBackColor = true;
+            this.button_Betoltes.Click += new System.EventHandler(this.button_Betoltes_Click);
             // 
             // textBox_Forrasfajl
             // 
