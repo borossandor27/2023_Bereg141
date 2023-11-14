@@ -36,5 +36,10 @@ namespace WindowsFormsAlapok
                 } 
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            comboBox_Maximum_Minimum.SelectedIndex=0;
+        }
     }
 }
