@@ -39,7 +39,11 @@ namespace WindowsFormsAlapok
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox_Maximum_Minimum.SelectedIndex=0;
-            Adatbetoltes(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "orszagok.csv");
+            string kiindulasiFajl = Environment.CurrentDirectory + Path.DirectorySeparatorChar + "orszagok.csv";
+            if (File.Exists(kiindulasiFajl))
+            {
+                Adatbetoltes(kiindulasiFajl);
+            }
         }
 
         private void Adatbetoltes(string file)
