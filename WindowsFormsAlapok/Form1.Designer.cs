@@ -219,6 +219,8 @@
             this.textBox_KeresettOrszag.Name = "textBox_KeresettOrszag";
             this.textBox_KeresettOrszag.Size = new System.Drawing.Size(335, 29);
             this.textBox_KeresettOrszag.TabIndex = 15;
+            this.textBox_KeresettOrszag.MouseLeave += new System.EventHandler(this.textBox_KeresettOrszag_MouseLeave);
+            this.textBox_KeresettOrszag.MouseHover += new System.EventHandler(this.szinvaltoztatas);
             // 
             // button_Kereses
             // 

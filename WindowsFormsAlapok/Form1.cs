@@ -179,5 +179,15 @@ namespace WindowsFormsAlapok
                 MessageBox.Show($"Minimum {keresettOrszag.OrszagNev} területe: {keresettOrszag.Terulet}");
             }
         }
+
+        private void szinvaltoztatas(object sender, EventArgs e)
+        {
+            textBox_KeresettOrszag.BackColor = Color.Aqua;
+        }
+
+        private void textBox_KeresettOrszag_MouseLeave(object sender, EventArgs e)
+        {
+            textBox_KeresettOrszag.BackColor = DefaultBackColor;
+        }
     }
 }
