@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto;
 
 namespace WindowsFormsAppTagdij
 {
@@ -22,11 +23,6 @@ namespace WindowsFormsAppTagdij
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tagokBetoltese();
-        }
-
-        private void tagokBetoltese()
-        {
             MySqlConnectionStringBuilder sb = new MySqlConnectionStringBuilder();
             sb.Clear();
             sb.Server = "localhost";
@@ -34,10 +30,20 @@ namespace WindowsFormsAppTagdij
             sb.Password = "";
             sb.Database = "tagdij";
             connection = new MySqlConnection(sb.ConnectionString);
+            command = connection.CreateCommand();
+
+            tagokBetoltese();
+        }
+
+        private void tagokBetoltese()
+        {
+            listBox_tagok.Items.Clear();
             try
             {
-                connection.Open();
-                command = connection.CreateCommand();
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
                 command.CommandText = "SELECT `azon`,`nev`,`szulev`,`irszam`,`orsz` FROM `ugyfel` WHERE 1 ORDER BY nev;";
                 using (MySqlDataReader dr = command.ExecuteReader())
                 {
@@ -78,7 +84,36 @@ namespace WindowsFormsAppTagdij
                 return;
             }
             //-- STB...
+            string nev = textBox_nev.Text;
+            decimal szulev = numericUpDown_szulev.Value;
+            decimal irszam = numericUpDown_irszam.Value;
+            string orsz = textBox_orsz.Text;
+            command.CommandText = "INSERT INTO `ugyfel`(`azon`, `nev`, `szulev`, `irszam`, `orsz`) VALUES (NULL, @nev, @szulev, @irszam, @orsz)";
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@nev", nev);
+            command.Parameters.AddWithValue("@szulev", szulev);
+            command.Parameters.AddWithValue("@irszam", irszam);
+            command.Parameters.AddWithValue("@orsz", orsz);
+            try
+            {
+                if (connection.State!= ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+                command.ExecuteNonQuery();
+                MessageBox.Show("Sikeres rögzítés!");
+            }
+            catch (MySqlException ex)
+            {
 
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            textBox_nev.Text="";
+            numericUpDown_szulev.Value = numericUpDown_szulev.Minimum;
+            numericUpDown_irszam.Value = numericUpDown_irszam.Minimum;
+            textBox_orsz.Text = "H";
+            tagokBetoltese();
         }
     }
 }
