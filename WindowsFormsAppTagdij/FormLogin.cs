@@ -12,11 +12,11 @@ using Org.BouncyCastle.Crypto;
 
 namespace WindowsFormsAppTagdij
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
         MySqlConnection connection = null;
         MySqlCommand command = null;
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
         }
