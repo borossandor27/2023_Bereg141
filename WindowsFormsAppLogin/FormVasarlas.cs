@@ -63,7 +63,15 @@ namespace WindowsFormsAppLogin
 
         private void FormVasarlas_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MessageBox.Show("Valóban ki akar lépni?");
+            if (MessageBox.Show("Valóban ki akar lépni?","kilépés",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+            {
+                //System.Windows.Forms.Application.Exit();
+                System.Windows.Forms.Application.ExitThread();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
