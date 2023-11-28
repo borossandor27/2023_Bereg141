@@ -27,6 +27,7 @@ namespace WindowsFormsAppLogin
             if (reader.Read())
             {
                 string taroltJelszo = reader.GetString("jelszo");
+                reader.Close();
                 if (taroltJelszo.Equals(textBox_jelszo.Text))
                 {
                     //-- Megadott és tárolt jelszó megegyezik

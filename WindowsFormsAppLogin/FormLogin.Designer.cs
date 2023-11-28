@@ -52,6 +52,7 @@
             this.textBox_nev.Name = "textBox_nev";
             this.textBox_nev.Size = new System.Drawing.Size(382, 31);
             this.textBox_nev.TabIndex = 1;
+            this.textBox_nev.Text = "Lajos";
             // 
             // label2
             // 
@@ -68,6 +69,7 @@
             this.textBox_jelszo.Name = "textBox_jelszo";
             this.textBox_jelszo.Size = new System.Drawing.Size(377, 31);
             this.textBox_jelszo.TabIndex = 3;
+            this.textBox_jelszo.Text = "1234";
             // 
             // button_login
             // 
@@ -92,7 +94,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "FormLogin";
             this.Text = "Belépés";
