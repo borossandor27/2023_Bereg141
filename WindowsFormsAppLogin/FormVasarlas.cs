@@ -13,6 +13,7 @@ namespace WindowsFormsAppLogin
 {
     public partial class FormVasarlas : Form
     {
+
         public FormVasarlas()
         {
             InitializeComponent();
@@ -66,6 +67,7 @@ namespace WindowsFormsAppLogin
             if (MessageBox.Show("Valóban ki akar lépni?","kilépés",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
                 //System.Windows.Forms.Application.Exit();
+                //Environment.Exit(0);
                 System.Windows.Forms.Application.ExitThread();
             }
             else

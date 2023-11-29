@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2023. Nov 28. 13:44
+-- Létrehozás ideje: 2023. Nov 29. 09:12
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -47,6 +47,19 @@ INSERT INTO `termek` (`termekid`, `termeknev`, `ar`, `db`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tábla szerkezet ehhez a táblához `vasarlas`
+--
+
+CREATE TABLE `vasarlas` (
+  `vasarloId` int(10) UNSIGNED NOT NULL,
+  `termekid` int(10) UNSIGNED NOT NULL,
+  `datum` datetime NOT NULL DEFAULT current_timestamp(),
+  `vasaroltdb` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Tábla szerkezet ehhez a táblához `vasarlo`
 --
 
@@ -74,6 +87,13 @@ ALTER TABLE `termek`
   ADD PRIMARY KEY (`termekid`);
 
 --
+-- A tábla indexei `vasarlas`
+--
+ALTER TABLE `vasarlas`
+  ADD KEY `fk_vasarlo_vasarlas` (`vasarloId`),
+  ADD KEY `fk_termek_vasarlas` (`termekid`);
+
+--
 -- A tábla indexei `vasarlo`
 --
 ALTER TABLE `vasarlo`
@@ -94,6 +114,17 @@ ALTER TABLE `termek`
 --
 ALTER TABLE `vasarlo`
   MODIFY `vasarloId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `vasarlas`
+--
+ALTER TABLE `vasarlas`
+  ADD CONSTRAINT `fk_termek_vasarlas` FOREIGN KEY (`termekid`) REFERENCES `termek` (`termekid`),
+  ADD CONSTRAINT `fk_vasarlo_vasarlas` FOREIGN KEY (`vasarloId`) REFERENCES `vasarlo` (`vasarloId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
