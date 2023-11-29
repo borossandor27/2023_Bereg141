@@ -1,8 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Gép: 127.0.0.1
+
 -- Létrehozás ideje: 2023. Nov 29. 09:12
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
