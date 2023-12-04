@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Bcpg;
 
 namespace WindowsFormsAppLogin
 {
@@ -14,6 +15,7 @@ namespace WindowsFormsAppLogin
         public static FormVasarlas formVasarlas = null;
         public static MySqlConnection connection = null;
         public static MySqlCommand command = null;
+        public static int UserId;
         static void Main()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();

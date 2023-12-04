@@ -20,13 +20,14 @@ namespace WindowsFormsAppLogin
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            Program.command.CommandText = "SELECT vasarlo.jelszo FROM vasarlo WHERE vasarlo.nev=@nev";
+            Program.command.CommandText = "SELECT vasarlo.jelszo, vasarlo.vasarloid FROM vasarlo WHERE vasarlo.nev=@nev";
             Program.command.Parameters.Clear();
             Program.command.Parameters.AddWithValue("@nev", textBox_nev.Text);
             MySqlDataReader reader = Program.command.ExecuteReader();
             if (reader.Read())
             {
                 string taroltJelszo = reader.GetString("jelszo");
+                Program.UserId = reader.GetInt32("vasarloid");
                 reader.Close();
                 if (taroltJelszo.Equals(textBox_jelszo.Text))
                 {
