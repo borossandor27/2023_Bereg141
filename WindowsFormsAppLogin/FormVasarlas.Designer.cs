@@ -258,12 +258,14 @@
             this.módosításToolStripMenuItem.Name = "módosításToolStripMenuItem";
             this.módosításToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.módosításToolStripMenuItem.Text = "Módosítás";
+            this.módosításToolStripMenuItem.Click += new System.EventHandler(this.módosításToolStripMenuItem_Click);
             // 
             // törlésToolStripMenuItem
             // 
             this.törlésToolStripMenuItem.Name = "törlésToolStripMenuItem";
             this.törlésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.törlésToolStripMenuItem.Text = "Törlés";
+            this.törlésToolStripMenuItem.Click += new System.EventHandler(this.törlésToolStripMenuItem_Click);
             // 
             // felhasználóToolStripMenuItem1
             // 
@@ -276,7 +278,7 @@
             // jelszóVáltozásToolStripMenuItem
             // 
             this.jelszóVáltozásToolStripMenuItem.Name = "jelszóVáltozásToolStripMenuItem";
-            this.jelszóVáltozásToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.jelszóVáltozásToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.jelszóVáltozásToolStripMenuItem.Text = "Jelszó változás";
             // 
             // FormVasarlas
@@ -308,8 +310,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxTermekek;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -329,5 +329,6 @@
         private System.Windows.Forms.ToolStripMenuItem törlésToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem felhasználóToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem jelszóVáltozásToolStripMenuItem;
+        public System.Windows.Forms.ListBox listBoxTermekek;
     }
 }
