@@ -20,26 +20,12 @@ namespace WindowsFormsAppLogin
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            Program.command.CommandText = "SELECT vasarlo.jelszo, vasarlo.vasarloid FROM vasarlo WHERE vasarlo.nev=@nev";
-            Program.command.Parameters.Clear();
-            Program.command.Parameters.AddWithValue("@nev", textBox_nev.Text);
-            MySqlDataReader reader = Program.command.ExecuteReader();
-            if (reader.Read())
+
+            if (Program.db.validUser(textBox_nev.Text,textBox_jelszo.Text)>=0)
             {
-                string taroltJelszo = reader.GetString("jelszo");
-                Program.UserId = reader.GetInt32("vasarloid");
-                reader.Close();
-                if (taroltJelszo.Equals(textBox_jelszo.Text))
-                {
-                    //-- Megadott és tárolt jelszó megegyezik
-                    this.Hide();
-                    Program.formVasarlas.Show();
-                }
-                else
-                {
-                    MessageBox.Show("nem jó");
-                }
+                Program.formVasarlas.Show();
             }
+
         }
     }
 }

@@ -27,26 +27,8 @@ namespace WindowsFormsAppLogin
         private void updateTermekekLista()
         {
             listBoxTermekek.Items.Clear();
-            Program.command.CommandText = "SELECT `termekid`,`termeknev`,`ar`,`db` FROM `termek` WHERE 1 ORDER BY termeknev";
-            try
-            {
-                if (Program.connection.State != ConnectionState.Open)
-                {
-                    Program.connection.Open();
-                }
-                using (MySqlDataReader dr = Program.command.ExecuteReader())
-                {
-                    while (dr.Read())
-                    {
-                        listBoxTermekek.Items.Add(new Termek(dr.GetInt32("termekid"), dr.GetString("termeknev"), dr.GetInt32("ar"), dr.GetInt32("db")));
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
+            listBoxTermekek.Items.AddRange(Program.db.getTermekek().ToArray());
+            
         }
 
         private void listBoxTermekek_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,33 +71,12 @@ namespace WindowsFormsAppLogin
             {
                 return;
             }
-            MySqlTransaction tr = null;
-
-            try
+            if (Program.db.vasarlas(int.Parse(textBox_termekid.Text), numericUpDown_vasaroltDarab.Value))
             {
-                tr = Program.connection.BeginTransaction();
-                Program.command.Transaction = tr; //-- START TRANSACTION
-                //-- vásárlás adatainak a rögzítése ------
-                Program.command.CommandText = "INSERT INTO `vasarlas` (`vasarloId`, `termekid`,`vasaroltdb`) VALUES (@vasarloid, @termekid, @vasaroltdb);";
-                Program.command.Parameters.Clear();
-                Program.command.Parameters.AddWithValue("@vasarloid", Program.UserId);
-                Program.command.Parameters.AddWithValue("@termekid", textBox_termekid.Text);
-                Program.command.Parameters.AddWithValue("@vasaroltdb", numericUpDown_vasaroltDarab.Value);
-                Program.command.ExecuteNonQuery();
-                //-- a raktárkészlet aktualizálása az eladott mennyiséggel
-                Program.command.CommandText = $"UPDATE `termek` SET `db`= db-{numericUpDown_vasaroltDarab.Value} WHERE `termekid`= {textBox_termekid.Text}";
-                Program.command.ExecuteNonQuery();
-                tr.Commit();
-                textBox_termekid.Text = "";
-                textBox_termeknev.Text = "";
-                numericUpDown_ar.Value = numericUpDown_ar.Minimum;
-                numericUpDown_raktarKeszlet.Value = 0;
-                numericUpDown_vasaroltDarab.Value = numericUpDown_vasaroltDarab.Minimum;
-                MessageBox.Show("Sikeres vásárlás!");
+                MessageBox.Show("Sikeres vásárlás");
             }
-            catch (MySqlException ex)
+            else
             {
-                tr.Rollback();
                 MessageBox.Show("Sikertelen vásárlás!");
             }
             updateTermekekLista();

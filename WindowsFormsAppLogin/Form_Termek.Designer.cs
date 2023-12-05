@@ -69,6 +69,11 @@
             // numericUpDown_egysegar
             // 
             this.numericUpDown_egysegar.Location = new System.Drawing.Point(57, 119);
+            this.numericUpDown_egysegar.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.numericUpDown_egysegar.Name = "numericUpDown_egysegar";
             this.numericUpDown_egysegar.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown_egysegar.TabIndex = 2;
@@ -76,6 +81,11 @@
             // numericUpDown_raktarkeszlet
             // 
             this.numericUpDown_raktarkeszlet.Location = new System.Drawing.Point(57, 156);
+            this.numericUpDown_raktarkeszlet.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.numericUpDown_raktarkeszlet.Name = "numericUpDown_raktarkeszlet";
             this.numericUpDown_raktarkeszlet.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown_raktarkeszlet.TabIndex = 3;
