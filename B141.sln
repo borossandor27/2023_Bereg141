@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppTagdij", "Wi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppLogin", "WindowsFormsAppLogin\WindowsFormsAppLogin.csproj", "{F343A693-92A2-4B64-8C0E-B15EF69B623C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzoKitalaloForm", "SzoKitalaloForm\SzoKitalaloForm.csproj", "{F03EB445-CD65-4C90-88C9-0190837BCFB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{F343A693-92A2-4B64-8C0E-B15EF69B623C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F343A693-92A2-4B64-8C0E-B15EF69B623C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F343A693-92A2-4B64-8C0E-B15EF69B623C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03EB445-CD65-4C90-88C9-0190837BCFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03EB445-CD65-4C90-88C9-0190837BCFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03EB445-CD65-4C90-88C9-0190837BCFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03EB445-CD65-4C90-88C9-0190837BCFB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
