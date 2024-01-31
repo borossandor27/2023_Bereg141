@@ -22,6 +22,8 @@ namespace SzoKitalaloForm
         Panel panel_tipp = new Panel();
         Panel panel_Abc = new Panel();
         Panel panel_KitalaltSzo = new Panel();
+        int tippIndex = 0;
+
         public Form_Jatek()
         {
             InitializeComponent();
@@ -30,18 +32,21 @@ namespace SzoKitalaloForm
         private void Form_Jatek_Load(object sender, EventArgs e)
         {
             tableLayoutPanel.AutoSize = true;
+            tableLayoutPanel.ColumnCount = 3;
+                        tableLayoutPanel.RowCount = 3;
+
             
-            Label feliratGondoltSzo = new Label();
-            feliratGondoltSzo.Text = "Gondolt szó:";
-            feliratGondoltSzo.Dock = DockStyle.Fill;
-            feliratGondoltSzo.TextAlign=ContentAlignment.TopRight;
-            tableLayoutPanel.Controls.Add(feliratGondoltSzo, 0, 0);
-            tableLayoutPanel.Controls.Add(panel_KitalaltSzo);
-            Label feliratTipp= new Label();
-            feliratTipp.Text = "Az ön tippje:";
-            feliratTipp.Dock = DockStyle.Fill;  
-            feliratTipp.TextAlign=ContentAlignment.TopRight;
-            tableLayoutPanel.Controls.Add(feliratTipp, 0,1);
+            //-- 3. oszlopban az eddigi tippek 3 sor magasságban
+            ListBox listBoxEddigiTippek = controlEddigiTippek();
+            tableLayoutPanel.SetRowSpan(listBoxEddigiTippek, 3);
+            tableLayoutPanel.Controls.Add(listBoxEddigiTippek,2,0);
+
+            //-- legfelső sorban a kitalálandó szó ---
+            tableLayoutPanel.Controls.Add(feliratGondoltSzo(), 0, 0);
+            tableLayoutPanel.Controls.Add(panel_KitalaltSzo,1,0);
+            //-- 2. sorban a tippelés
+            
+            tableLayoutPanel.Controls.Add(feliratTipp(), 0,1);
             tableLayoutPanel.Controls.Add(panel_tipp, 1, 1);
             panel_Abc.Dock = DockStyle.Fill;
 
@@ -53,6 +58,44 @@ namespace SzoKitalaloForm
             uresTippek();
         }
 
+        private Control feliratTipp()
+        {
+            Label feliratTipp = new Label();
+            feliratTipp.Text = "Az ön tippje:";
+            feliratTipp.Dock = DockStyle.Fill;
+            feliratTipp.TextAlign = ContentAlignment.TopRight;
+            return feliratTipp;
+        }
+
+        private Control feliratGondoltSzo()
+        {
+            Label feliratGondoltSzo = new Label();
+            feliratGondoltSzo.Text = "Gondolt szó: ";
+            feliratGondoltSzo.Dock = DockStyle.Fill;
+            feliratGondoltSzo.TextAlign = ContentAlignment.TopRight;
+            return feliratGondoltSzo;
+        }
+
+        private ListBox controlEddigiTippek()
+        {
+            ListBox lb = new ListBox();
+            lb.Enabled = false;
+            lb.Items.Clear();
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Items.Add("szó");
+            lb.Dock = DockStyle.Fill;
+            
+            return lb;
+        }
+
         private void uresTippek()
         {
              panel_tipp.Controls.Clear();
@@ -60,16 +103,18 @@ namespace SzoKitalaloForm
             {
                 Button betuButton = new Button();
                 betuButton.Tag = string.Empty;
+                betuButton.Enabled = false;
                 betuButton.Text = "_";
                 betuButton.SetBounds(i * buttonSize, 0, buttonSize, buttonSize);
                 panel_tipp.Controls.Add(betuButton);
             }
             Button tippButton = new Button();
             tippButton.Tag = string.Empty;
+
             tippButton.Text = "Tippelek";
             tippButton.AutoSize = true;
             tippButton.Location = new Point(kitalaltSzo.Length * buttonSize+40, 0);
-            tippButton.Size = new Size(200, buttonSize);
+            tippButton.Size = new Size(100, buttonSize);
             panel_tipp.Controls.Add(tippButton);
             panel_tipp.Dock = DockStyle.Fill;
         }
@@ -87,8 +132,16 @@ namespace SzoKitalaloForm
                 betuButton.Text = abc[i];
                 
                 betuButton.SetBounds((i-sor*betuPerSor) * buttonSize, sor * buttonSize, buttonSize, buttonSize);
+                betuButton.Click += betuButton_Click;
                 panel_Abc.Controls.Add(betuButton);
             }
+        }
+
+        private void betuButton_Click(object sender, EventArgs e)
+        {
+            Button betuButton = (Button)sender;
+            panel_tipp.Controls[tippIndex].Text = betuButton.Text;
+            tippIndex = (tippIndex < kitalaltSzo.Length - 1 ? tippIndex+1 : 0);
         }
 
         private void gondolokEgySzora()
@@ -105,6 +158,7 @@ namespace SzoKitalaloForm
                 betuButton.SetBounds(i * buttonSize, 0, buttonSize, buttonSize);
                 panel_KitalaltSzo.Controls.Add(betuButton);
             }
+            panel_KitalaltSzo.Dock= DockStyle.Fill;
         }
 
         private void SzavakBeolvasasa()
