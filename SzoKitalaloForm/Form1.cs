@@ -22,6 +22,7 @@ namespace SzoKitalaloForm
         Panel panel_tipp = new Panel();
         Panel panel_Abc = new Panel();
         Panel panel_KitalaltSzo = new Panel();
+        Panel panel_Kijelzo = new Panel();
         int tippIndex = 0;
 
         public Form_Jatek()
@@ -33,10 +34,13 @@ namespace SzoKitalaloForm
         {
             tableLayoutPanel.AutoSize = true;
             tableLayoutPanel.ColumnCount = 3;
-                        tableLayoutPanel.RowCount = 3;
+                        tableLayoutPanel.RowCount = 4;
+            tableLayoutPanel.ColumnStyles[0] = new ColumnStyle(SizeType.Percent,15);
+            tableLayoutPanel.ColumnStyles[1] = new ColumnStyle(SizeType.Percent,65);
+            tableLayoutPanel.ColumnStyles[2] = new ColumnStyle(SizeType.Percent,20);
 
-            
-            //-- 3. oszlopban az eddigi tippek 3 sor magasságban
+
+            //-- 3. oszlopban az eddigi tippek 3 sor magasságban ---
             ListBox listBoxEddigiTippek = controlEddigiTippek();
             tableLayoutPanel.SetRowSpan(listBoxEddigiTippek, 3);
             tableLayoutPanel.Controls.Add(listBoxEddigiTippek,2,0);
@@ -49,13 +53,27 @@ namespace SzoKitalaloForm
             tableLayoutPanel.Controls.Add(feliratTipp(), 0,1);
             tableLayoutPanel.Controls.Add(panel_tipp, 1, 1);
             panel_Abc.Dock = DockStyle.Fill;
-
+            //-- 3. sorban virtuális billentyű -----
             tableLayoutPanel.Controls.Add(panel_Abc, 1, 2);
-            
+            //-- 4. sorban egy kijelző -----
+            tableLayoutPanel.Controls.Add(panel_Kijelzo, 0, 3);
+            tableLayoutPanel.SetColumnSpan(panel_Kijelzo, 2);
+            Kijelez("kezdődhet a játék!");
             SzavakBeolvasasa();
             gondolokEgySzora();
             abctKipakol();
             uresTippek();
+        }
+
+        private void Kijelez(string szoveg)
+        {
+            panel_Kijelzo.Controls.Clear();
+            Label label=new Label();    
+            label.Text=szoveg;
+            label.Dock = DockStyle.Fill;
+            label.AutoSize = true;
+            label.TextAlign = ContentAlignment.MiddleCenter;
+            panel_Kijelzo.Controls.Add(label);
         }
 
         private Control feliratTipp()
@@ -80,6 +98,7 @@ namespace SzoKitalaloForm
         {
             ListBox lb = new ListBox();
             lb.Enabled = false;
+            //lb.ColumnWidth = 200;
             lb.Items.Clear();
             lb.Items.Add("szó");
             lb.Items.Add("szó");
