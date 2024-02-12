@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppLogin", "Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzoKitalaloForm", "SzoKitalaloForm\SzoKitalaloForm.csproj", "{F03EB445-CD65-4C90-88C9-0190837BCFB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroSkill", "EuroSkill2025\EuroSkill.csproj", "{57873E2D-F397-46FF-84FC-B0BCE3FF58E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{F03EB445-CD65-4C90-88C9-0190837BCFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F03EB445-CD65-4C90-88C9-0190837BCFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F03EB445-CD65-4C90-88C9-0190837BCFB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57873E2D-F397-46FF-84FC-B0BCE3FF58E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57873E2D-F397-46FF-84FC-B0BCE3FF58E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57873E2D-F397-46FF-84FC-B0BCE3FF58E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57873E2D-F397-46FF-84FC-B0BCE3FF58E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
