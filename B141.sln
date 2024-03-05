@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroSkill", "EuroSkill2025\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iranyitoszamos", "Iranyitoszamos\Iranyitoszamos.csproj", "{7EEDCB77-3996-44C0-9C1D-858A2BFC6FC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foiskolak", "Foiskolak\Foiskolak.csproj", "{ED9A3601-3F6B-486C-95D7-8861D0CF865D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{7EEDCB77-3996-44C0-9C1D-858A2BFC6FC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EEDCB77-3996-44C0-9C1D-858A2BFC6FC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EEDCB77-3996-44C0-9C1D-858A2BFC6FC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED9A3601-3F6B-486C-95D7-8861D0CF865D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED9A3601-3F6B-486C-95D7-8861D0CF865D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED9A3601-3F6B-486C-95D7-8861D0CF865D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED9A3601-3F6B-486C-95D7-8861D0CF865D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

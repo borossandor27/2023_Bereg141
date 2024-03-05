@@ -35,9 +35,13 @@ namespace Iranyitoszamos
             var client = new HttpClient();
             var request = new HttpRequestMessage(HttpMethod.Get, url);
             var response = await client.SendAsync(request);
-            response.EnsureSuccessStatusCode();
-            string jsonString = await response.Content.ReadAsStringAsync();
-            postalCode = PostalCode.FromJson(jsonString);
+            if(!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Hiba a lekérdezés során");
+            }
+            //response.EnsureSuccessStatusCode();
+            string jsonString = await response.Content.ReadAsStringAsync(); //json string f
+            postalCode = PostalCode.FromJson(jsonString); //jsonstringből objektumot csinál
             
         }
 
