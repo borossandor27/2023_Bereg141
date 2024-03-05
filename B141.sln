@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Iranyitoszamos", "Iranyitos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foiskolak", "Foiskolak\Foiskolak.csproj", "{ED9A3601-3F6B-486C-95D7-8861D0CF865D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSyncAsync", "ConsoleSyncAsync\ConsoleSyncAsync.csproj", "{794E5BD9-8C37-4077-BB80-8A62C6FE9007}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{ED9A3601-3F6B-486C-95D7-8861D0CF865D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED9A3601-3F6B-486C-95D7-8861D0CF865D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED9A3601-3F6B-486C-95D7-8861D0CF865D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{794E5BD9-8C37-4077-BB80-8A62C6FE9007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{794E5BD9-8C37-4077-BB80-8A62C6FE9007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{794E5BD9-8C37-4077-BB80-8A62C6FE9007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{794E5BD9-8C37-4077-BB80-8A62C6FE9007}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
