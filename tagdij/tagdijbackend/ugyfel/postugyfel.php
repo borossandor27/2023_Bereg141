@@ -16,8 +16,10 @@ $stmt = $connection->prepare($sql);
 $stmt->bind_param("siis",  $nev, $szulev, $irszam, $orsz);  
 if ($stmt->execute()) {
     http_response_code(201);
-    echo 'Sikeresen hozzáadva';
+    $message=array("message"=> 'Sikeresen hozzáadva');
+    return json_encode($message);
 } else {
     http_response_code(404);
-    echo 'Nem sikerült hozzáadni';
+    $message=array("message"=> 'Nem sikerült hozzáadni');
+    return json_encode($message);
 }

@@ -1,6 +1,7 @@
 <?php
-header('Content-Type: application/json; charset=utf-8', true);
+header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: *");
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
 /*
 fogadja az url kéréseket és megválaszolja azokat
@@ -16,8 +17,8 @@ $kereSzoveg = explode('/', $_SERVER['QUERY_STRING']);
 if ($kereSzoveg[0] === "ugyfel") {
     require_once 'ugyfel/index.php';
 } else {
-    http_response_code(404);
+    http_response_code(405);
     //-- hibaüzenet küldése JSON formátumban
-    $errorJson = array("message" => 'Nincs ilyen API');
+    $errorJson = array("error_message" => 'Nincs ilyen API');
     return json_encode($errorJson);
 }

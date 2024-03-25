@@ -2,7 +2,7 @@
 /* PUT data comes in on the stdin stream */
 $putdata = fopen("php://input", "r");
 $raw_data = '';
-//-- kilobájtonként olvassuk az adatokat
+//-- nincsenek sortörések, kilobájtonként olvassuk az adatokat
 while ($chunk = fread($putdata, 1024))
     $raw_data .= $chunk;
 

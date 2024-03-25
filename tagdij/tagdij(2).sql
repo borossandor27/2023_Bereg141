@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Már 19. 12:17
+-- Létrehozás ideje: 2024. Jan 10. 21:16
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -29,10 +29,11 @@ USE `tagdij`;
 -- Tábla szerkezet ehhez a táblához `befiz`
 --
 
-CREATE TABLE `befiz` (
+CREATE TABLE IF NOT EXISTS `befiz` (
   `azon` int(4) DEFAULT NULL COMMENT 'az ügyfél azonosítója',
   `datum` datetime DEFAULT NULL COMMENT 'a befizetés dátuma és pontos időpontja',
-  `osszeg` int(5) DEFAULT NULL COMMENT 'a befizetés összege'
+  `osszeg` int(5) DEFAULT NULL COMMENT 'a befizetés összege',
+  KEY `fk_befiz_ugyfel` (`azon`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -103,7 +104,8 @@ INSERT INTO `befiz` (`azon`, `datum`, `osszeg`) VALUES
 (1006, '2023-11-10 06:35:49', 42200),
 (1006, '2023-11-11 01:20:19', 10000),
 (1013, '2023-11-20 09:16:55', 4000),
-(1006, '2023-11-23 09:42:12', 49000);
+(1006, '2023-11-23 09:42:12', 49000),
+(1002, '2024-01-03 09:53:06', 54440);
 
 -- --------------------------------------------------------
 
@@ -111,57 +113,32 @@ INSERT INTO `befiz` (`azon`, `datum`, `osszeg`) VALUES
 -- Tábla szerkezet ehhez a táblához `ugyfel`
 --
 
-CREATE TABLE `ugyfel` (
+CREATE TABLE IF NOT EXISTS `ugyfel` (
   `azon` int(4) NOT NULL COMMENT 'az ügyfél azonosítója',
   `nev` varchar(12) DEFAULT NULL COMMENT 'az ügyfél neve',
-  `szulev` int(4) DEFAULT NULL COMMENT 'az ügyfél születési évszáma',
+  `szuldatum` date DEFAULT NULL COMMENT 'az ügyfél születési dátuma',
   `irszam` int(4) DEFAULT NULL COMMENT 'az ügyfél lakhelyének irányítószáma',
-  `orsz` varchar(2) DEFAULT NULL COMMENT 'az ügyfél országának kódja'
+  `orsz` varchar(2) DEFAULT NULL COMMENT 'az ügyfél országának kódja',
+  PRIMARY KEY (`azon`),
+  UNIQUE KEY `nev` (`nev`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- A tábla adatainak kiíratása `ugyfel`
 --
 
-INSERT INTO `ugyfel` (`azon`, `nev`, `szulev`, `irszam`, `orsz`) VALUES
-(1001, 'Buda Jenő', 1982, 1026, 'H'),
-(1002, 'Makkos Mária', 1985, 1128, 'H'),
-(1003, 'Pilis Csaba', 1992, 2442, 'H'),
-(1004, 'Török Bálint', 1988, 2128, 'H'),
-(1005, 'Szent Endre', 1962, 2000, 'H'),
-(1006, 'Kis Marton', 1991, 9999, 'A'),
-(1007, 'Békés Csaba', 1989, 4400, 'H'),
-(1009, 'Dráva Szabol', 1985, 7520, 'H'),
-(1010, 'Nagy Károly', 1975, 9999, 'RO'),
-(1012, 'Boros Jenő', 1982, 9999, 'RO'),
-(1013, 'Száva Magdol', 1987, 9999, 'HR');
-
---
--- Indexek a kiírt táblákhoz
---
-
---
--- A tábla indexei `befiz`
---
-ALTER TABLE `befiz`
-  ADD KEY `fk_befiz_ugyfel` (`azon`);
-
---
--- A tábla indexei `ugyfel`
---
-ALTER TABLE `ugyfel`
-  ADD PRIMARY KEY (`azon`),
-  ADD UNIQUE KEY `nev` (`nev`);
-
---
--- A kiírt táblák AUTO_INCREMENT értéke
---
-
---
--- AUTO_INCREMENT a táblához `ugyfel`
---
-ALTER TABLE `ugyfel`
-  MODIFY `azon` int(4) NOT NULL AUTO_INCREMENT COMMENT 'az ügyfél azonosítója', AUTO_INCREMENT=2014;
+INSERT INTO `ugyfel` (`azon`, `nev`, `szuldatum`, `irszam`, `orsz`) VALUES
+(1001, 'Buda Jenő', '1982-10-08', 1026, 'H'),
+(1002, 'Makkos Mária', '1970-09-26', 1128, 'H'),
+(1003, 'Pilis Csaba', '1992-12-13', 2442, 'H'),
+(1004, 'Török Bálint', '1988-01-02', 2128, 'H'),
+(1005, 'Szent Endre', '1962-02-17', 2000, 'H'),
+(1006, 'Kis Marton', '1991-04-23', 9999, 'A'),
+(1007, 'Békés Csaba', '1989-10-31', 4400, 'H'),
+(1009, 'Dráva Szabol', '1985-05-04', 7520, 'H'),
+(1010, 'Nagy Károly', '1975-04-01', 9999, 'RO'),
+(1012, 'Boros Jenő', '1982-04-10', 9999, 'RO'),
+(1013, 'Száva Magdol', '1987-08-14', 9999, 'HR');
 
 --
 -- Megkötések a kiírt táblákhoz
